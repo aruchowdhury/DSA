@@ -1,3 +1,4 @@
+//using nested for loop with O(n2) time complexity
 let frequencyCounterCheck = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
@@ -15,6 +16,7 @@ let frequencyCounterCheck = (arr1, arr2) => {
 
 console.log(frequencyCounterCheck([1, 2, 3], [1, 4, 9]));
 
+// using frequency counter with O(n) time complexity
 let frequencyCounterCheck1 = (arr1, arr2) => {
   if (arr1.length !== arr2.length) return false;
   let count1 = {};
