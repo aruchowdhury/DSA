@@ -44,3 +44,31 @@ let frequencyCounterCheck1 = (arr1, arr2) => {
 
 console.log(frequencyCounterCheck1([1, 2, 3, 3], [1, 4, 4, 9]));
 console.log(frequencyCounterCheck1([1, 2, 3, 3], [1, 4, 9, 9]));
+
+//frequency counter: anagram
+let frequecyCounterAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) return false;
+
+  let firstStrLookup = {};
+
+  for (let i = 0; i < str1.length; i++) {
+    let letter = str1[i].toLowerCase();
+    //if the letter already in the object add to existing value else make new property and set value as 1
+    firstStrLookup[letter]
+      ? (firstStrLookup[letter] += 1)
+      : (firstStrLookup[letter] = 1);
+  }
+  console.log(firstStrLookup);
+  for (let letter of str2) {
+    let lowerCaseLetter = letter.toLowerCase();
+    if (!firstStrLookup[lowerCaseLetter]) {
+      return false;
+    } else {
+      firstStrLookup[lowerCaseLetter] -= 1;
+    }
+  }
+  return true;
+};
+
+console.log(frequecyCounterAnagram("ssdkgsa", "sasgsdk"));
+console.log(frequecyCounterAnagram("anagrams", "nagaramm"));
